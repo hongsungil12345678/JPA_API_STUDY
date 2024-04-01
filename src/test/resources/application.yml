@@ -1,0 +1,21 @@
+# test 환경 -> 실제 환경과 완전히 분리가 가능, 실제 DB가 아닌 메모리 DB로
+# test용 application.yml 분리가 가능하다, 기본적으로 springboot에서 설정 안해주면 in-memory로 돌려줌(jdbc:h2:mem)
+#
+#spring:
+#  # test용 In-memory 설정
+#  datasource:
+#    url: jdbc:h2:mem:test
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+#    properties:
+#      hibernate:
+#        format_sql: true
+logging:
+  level:
+    org.hibernate.sql: debug
+    org.hibernate.orm.jdbc.bind: trace
